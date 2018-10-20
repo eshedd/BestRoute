@@ -35,10 +35,8 @@ io.on('connection', function (socket) {
       sockets.splice(sockets.indexOf(socket), 1);
       updateRoster();
     });
-
     socket.on('message', function (msg) {
       var text = String(msg || '');
-
       if (!text)
         return;
 
