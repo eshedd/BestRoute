@@ -4,6 +4,20 @@
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
+  <nav>
+      <div>
+        <a href="/">Carpool Buddy</a>
+      </div>
+
+      <div>
+        {{# if currentUserId}}
+          <a href="/logout">log out</a>
+        {{else}}
+          <a href="/login">log in</a>
+          {{/if}}
+      </div>
+
+    </nav>
   <body>
     {{{body}}}
   </body>
