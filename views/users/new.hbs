@@ -13,8 +13,27 @@
     </div>
 
     <div>
+      <input class="form" type="password" required id="confirm_password" placeholder="Confirm Password" autocomplete="off">
+    </div>
+
+    <script>
+      var password = document.getElementById("user-password");
+      var confirm_password = document.getElementById("confirm_password");
+
+      function validatePassword(){
+        if(password.value != confirm_password.value) {
+          confirm_password.setCustomValidity("Passwords Don't Match");
+        } else {
+          confirm_password.setCustomValidity('');
+        }
+      }
+      password.onchange = validatePassword;
+      confirm_password.onkeyup = validatePassword;
+    </script>
+
+    <div>
       <button type="submit">Submit</button>
     </div>
-    
+
   </form>
 </div>
