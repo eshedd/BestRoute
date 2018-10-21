@@ -2,7 +2,7 @@
 
   <div>
     {{#each trips as |trip|}}
-      <p>{{trip.title}}</p>
+      <a href="/trips/{{trip.id}}">{{trip.title}}</p>
     {{/each}}
   </div>
 
