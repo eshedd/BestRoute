@@ -1,0 +1,11 @@
+<div class="parallax text-center">
+  <h1>
+    Carpool Buddy
+  </h1>
+  <div class="tagline">A simple way to carpool</div>
+  {{# if currentUserId}}
+      <a href="/trips"><button class="btn btn-primary">Go To Profile</button></a>
+    {{else}}
+      <a href="/users/new"><button class="btn btn-primary">Get Started</button></a>
+  {{/if}}
+</div>
