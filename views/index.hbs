@@ -1,11 +1,19 @@
 <div class="parallax text-center">
-  <br></br>
-  <h1>Carpool Buddy</h1>
-  <div class="tagline">A simple way to carpool</div>
-  <br></br>
-  {{# if currentUserId}}
-      <a href="/trips"><button class="btn btn-primary">Go To Profile</button></a>
+    <h1>CarpoolBuddy
+        <span class="typer" id="main" data-words="test,try,cool,easy" data-colors="black" data-delay="100" data-deleteDelay="1000"></span>
+        <span class="cursor" data-owner="main"></span>
+    </h1>
+    <p>testetstetsetestetsetsetestest</p>
+    <br></br>
+    <div class="tagline">A simple way to carpool</div>
+    <br></br>
+    {{# if currentUserId}}
+    <a href="/trips">
+        <button class="btn btn-primary">Go To Profile</button>
+    </a>
     {{else}}
-      <a href="/users/new"><button class="btn btn-primary">Get Started</button></a>
-  {{/if}}
+    <a href="/users/new">
+        <button class="btn btn-primary">Get Started</button>
+    </a>
+    {{/if}}
 </div>
