@@ -10,21 +10,21 @@
   <nav class="navbar navbar-light bg-light">
     <div>
       <a class="navbar-brand" href="/">
-        <img src="logo.png" alt="logo" width="30" height="30" class="d-inline-block align-top"> CarpoolBuddy
+        <img class="logo" src="logo.png" alt="logo" width="30" height="30">
+        CarpoolBuddy
       </a>
     </div>
-
+    <div class="name">
+      <a href="/trips">{{username}}</a>
+    </div>
     <div class="navbar-text">
       {{# if currentUserId}}
-        <button type="button" class="btn btn-primary">
-          <a href="/logout">Log out</a>
-        </button>
+        <a class="btn btn-primary" href="/logout">Log out</a>
       {{else}}
-        <button type="button" class="btn btn-primary">
-          <a href="/login">Log in</a>
-        </button>
+        <a class="btn btn-primary" href="/login">Log in</a>
       {{/if}}
     </div>
+  </nav>
 
     <main>
       {{{body}}}
