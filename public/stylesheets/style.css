@@ -31,6 +31,10 @@ a {
   border-bottom: solid #efefef 1.5px;
 }
 
+.username {
+  margin-right: 1em;
+}
+
 .title {
   margin-right: auto;
   text-decoration: none;
