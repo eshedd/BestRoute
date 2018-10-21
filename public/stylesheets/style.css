@@ -1,7 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #FFF7D7;
+  background-color: #eee;  /* #FFF7D7; */
 }
 
 a {
@@ -23,6 +23,7 @@ a {
   padding: 2.5px 10px 2.5px 10px;
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 1;
   border-bottom: solid #efefef 1.5px;
