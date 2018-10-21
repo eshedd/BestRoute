@@ -1,20 +1,14 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #FFF7D7;
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
 }
 
 .pagetop {
   display:flex;
   justify-content: space-between;
-}
-
-.pagetop h1 {
-  margin: 12px;
-  font-size: 35px;
-  color: #063B96;
-  font-family: Palatino;
 }
