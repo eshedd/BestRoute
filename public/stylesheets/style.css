@@ -43,6 +43,18 @@ a {
   position: relative;
   margin: 1rem 1rem;
 }
+.group .control-label {
+  position: absolute;
+  top: 0.25rem;
+  pointer-events: none;
+  padding-left: 0.125rem;
+  z-index: 1;
+  color: #b3b3b3;
+  font-size: 1rem;
+  font-weight: normal;
+  -webkit-transition: all 0.28s ease;
+  transition: all 0.28s ease;
+}
 .group input {
   height: 1.9rem; 
   display: block;
