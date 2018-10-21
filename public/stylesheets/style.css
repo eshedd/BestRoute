@@ -6,3 +6,15 @@ body {
 a {
   color: #00B7FF;
 }
+
+.pagetop {
+  display:flex;
+  justify-content: space-between;
+}
+
+.pagetop h1 {
+  margin: 12px;
+  font-size: 35px;
+  color: #063B96;
+  font-family: Palatino;
+}
