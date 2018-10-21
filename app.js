@@ -1,3 +1,6 @@
+if (!process.env.PORT) {
+  require('dotenv').config();
+}
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -8,6 +11,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+require('dotenv').config();
 const session = require('express-session');
 app.use(session({ secret: 'secret-unique-code', cookie: { maxAge: 3600000 }, resave: true, saveUninitialized: true }));
 
