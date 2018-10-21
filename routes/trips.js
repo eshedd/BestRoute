@@ -8,7 +8,8 @@ const router = express.Router();
 
 // Trips index
 router.get('/', (req, res) => {
-  Trip.find({}, 'title', (err, trips) => {
+  Trip.find({users: res.locals.currentUserId}).sort({ date: -1 }).exec(function(err, trips) {
+
     if (err) {
       console.error(err);
     } else {
@@ -27,10 +28,20 @@ router.get('/:id', auth.requireLogin, (req, res, next) => {
   Trip.findById(req.params.id, function(err, trip) {
     if(err) { console.error(err) };
 
+    console.log("HERE")
      Participant.find({ trip: trip }, function(err, participants) {
           if(err) { console.error(err) };
+          console.log("HELLO")
+          let locations = [];
+          participants.forEach(participant => {
+            locations.push(participant.address);
+            console.log("CHECK")
+          })
+          console.log(locations);
 
-    res.render('trips/show', { trip, participants: participants });
+
+    res.render('trips/show', { trip, participants: participants, maps: maps, testGeometry: JSON.stringify(maps.getGeometry(maps.geocodes(locations)))});
+
     });
   });
 });
