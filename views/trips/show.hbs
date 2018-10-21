@@ -49,7 +49,7 @@ map.on('load', function() {
       type: 'geojson',
       data: {
         type: 'Feature',
-        geometry: document.getElementById('geometry').innerHTML
+        geometry: JSON.parse(document.getElementById('geometry').innerHTML)
       }
     },
     paint: {
