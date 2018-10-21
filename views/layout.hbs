@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <nav>
-      <div>
-        <a href="/">Carpool Buddy</a>
-      </div>
 
-      <div>
-        {{# if currentUserId}}
-          <a href="/logout">log out</a>
-        {{else}}
-          <a href="/login">log in</a>
-          {{/if}}
-      </div>
-
+<head>
+  <title>{{title}}</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<div class = "pagetop">
+<div>
+  <h1>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="/">
+        <img src="logo.png" alt="logo" width="30" height="30" class="d-inline-block align-top"> CarpoolBuddy
+      </a>
     </nav>
-  <body>
-    {{{body}}}
-  </body>
+  </h1>
+</div>
+
+<div>
+<nav>
+
+  <div>
+    {{# if currentUserId}}
+    <button type="button" class="btn btn-primary">
+      <a href="/logout">Log out</a>
+    </button>
+    {{else}}
+    <button type="button" class="btn btn-primary">
+      <a href="/login">Log in</a>
+    </button>
+    {{/if}}
+  </div>
+
+</nav>
+</div>
+
+<body>
+  {{{body}}}
+</body>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"></script>
+
 </html>
