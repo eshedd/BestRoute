@@ -16,17 +16,17 @@ maps.driverPosition = () => {
 maps.getEmbed = (route) => {
     
 };
-maps.getBestRoute = (arr) => {
+/*maps.getBestRoute = (arr) => {
     var str = "";
     for (let point of arr) {
         str += `${point[0]},${point[1]};`;
     }
     return bestRouteJSON(str);
-};
+};*/
 maps.getBestRouteCoords = (arr) => {
     var json = maps.getBestRoute(arr);
     return json.waypoints.map((x) => x.location);
-};
+}; // I win
 maps.getBestRouteBySearch = (arr) => {
     var str = "",
         res = [];
@@ -40,41 +40,41 @@ maps.getBestRouteBySearch = (arr) => {
     }
     return res;
 };
-// maps.getBestRoute = (arr) => {
-//     var from = arr[0], mids = arr.slice(1, arr.length - 1), to = arr[arr.length - 1];
-//     var perms = permutations(mids);
-//     var all = tryall();
-//     return [from, ...perms[all.indexOf(Math.min(...all))], to];
-//     function permutations(inputArr) {
-//         let result = [];
-//         function permute(arr, m = []) {
-//             if (arr.length === 0) {
-//                 result.push(m);
-//             }
-//             else {
-//                 for (let i = 0; i < arr.length; i++) {
-//                     let curr = arr.slice();
-//                     let next = curr.splice(i, 1);
-//                     permute(curr.slice(), m.concat(next));
-//                 }
-//             }
-//         }
-//         permute(inputArr);
-//         console.log(result);
-//         return result;
-//     }
-//     function tryall() {
-//         let poss = [];
-//         for (let i in permutations(mids)) {
-//             poss.push([]);
-//             for(let j = 0; j < perms[i].length - 1; j++) {
-//                 poss[i].push(routeDuration(perms[i][j], perms[i][j + 1]));
-//             }
-//             poss[i] = poss[i].reduce((a, b) => a + b, routeDuration(from, perms[i][0]) + routeDuration(perms[i][perms[i].length - 1], to));
-//         }
-//         return poss;
-//     }
-// };
+maps.getBestRoute = (arr) => {
+    var from = arr[0], mids = arr.slice(1, arr.length - 1), to = arr[arr.length - 1];
+    var perms = permutations(mids);
+    var all = tryall();
+    return [from, ...perms[all.indexOf(Math.min(...all))], to];
+    function permutations(inputArr) {
+        let result = [];
+        function permute(arr, m = []) {
+            if (arr.length === 0) {
+                result.push(m);
+            }
+            else {
+                for (let i = 0; i < arr.length; i++) {
+                    let curr = arr.slice();
+                    let next = curr.splice(i, 1);
+                    permute(curr.slice(), m.concat(next));
+                }
+            }
+        }
+        permute(inputArr);
+        console.log(result);
+        return result;
+    }
+    function tryall() {
+        let poss = [];
+        for (let i in permutations(mids)) {
+            poss.push([]);
+            for(let j = 0; j < perms[i].length - 1; j++) {
+                poss[i].push(routeDuration(perms[i][j], perms[i][j + 1]));
+            }
+            poss[i] = poss[i].reduce((a, b) => a + b, routeDuration(from, perms[i][0]) + routeDuration(perms[i][perms[i].length - 1], to));
+        }
+        return poss;
+    }
+};
 function bestRouteJSON(str) {
     return getJSON(`https://api.mapbox.com/optimized-trips/v1/mapbox/driving/${str.slice(0, str.length - 1)}?source=first&geometries=geojson&destination=last&access_token=${key}`);
 } 
