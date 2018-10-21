@@ -151,3 +151,98 @@ a {
 #center .center2 {
   padding-top: 40px;
 }
+
+/* Index page */
+.typer, .title {
+  color: white!important;
+  font-weight: bold!important;
+}
+
+.tagline {
+  font-size: 1.5em;
+}
+
+.parallax {
+  background-image: linear-gradient(#007BFF, #96cde0);
+  min-height: 500px;
+  width: 100vw;
+  margin-top: -2em;
+  margin-bottom: 2em;
+  margin-left: calc(-50vw + 50% - 8px);
+  position: relative;
+  color: white;
+}
+
+.section.second {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 0px 100px 0 0;
+}
+
+li.list-item {
+  padding: 30px 60px;
+  width: 40em;
+  margin: 10px;
+  list-style-type: none;
+  border-radius: 5px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+li.item1, li.item3 {
+  background-color: #e0e0e0;
+  color: #007BFF;
+}
+
+li.item2, li.item4 {
+  background-color: #e5e5e5;
+  color: #0af;
+}
+
+li.list-item-img {
+  list-style-type: none;
+  margin: 10px -60px 15px 80px;
+}
+
+.section.left {
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Participants */
+.card {
+  margin: 1em;
+  border: none;
+}
+
+.trips, .participants {
+  display: flex;
+  justify-content: center;
+}
+
+.add {
+  margin-top: 2em;
+  position: absolute;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+.back-btn {
+  position: fixed;
+  bottom: 2em;
+  left: 2em;
+}
+
+.input-txt {
+  background-color:white;
+  border: 0px solid;
+  border-bottom: 2px solid #ddd;
+  padding: .5em;
+  margin-bottom: .5em;
+}
+
+.input-txt:focus {
+  outline:none;
+}
