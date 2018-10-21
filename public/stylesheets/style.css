@@ -38,3 +38,15 @@ a {
 .logo {
   margin-right: .1em;
 }
+
+input {
+
+}
+
+#center {
+  padding-top: 150px;
+}
+
+#center div {
+  padding-top: 5px;
+}
