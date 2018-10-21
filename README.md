@@ -21,6 +21,9 @@ shows BEST ROUTE
 
 
 #### Extra
+- user profile has location info
+  - can friend request other users
+  - add user info through location
 
 ## Views
 - login/sign up
@@ -52,4 +55,4 @@ delete feature
 - MongoDB
 - mLab
 - Express
-- Bootstrap?
+- Bootstrap

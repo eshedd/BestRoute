@@ -4,12 +4,14 @@ const Trip = require('../models/trip');
 const Participant = require('../models/participant');
 const participants = require('./participants');
 const maps = require('../maps/maps.js');
+const User = require('../models/user');
 
 const router = express.Router();
 
 // Trips index
 router.get('/', (req, res) => {
-  Trip.find({}, 'title', (err, trips) => {
+  Trip.find({users: res.locals.currentUserId}).sort({ date: -1 }).exec(function(err, trips) {
+  // Trip.find({}, 'title', (err, trips) => {
     if (err) {
       console.error(err);
     } else {
@@ -20,7 +22,11 @@ router.get('/', (req, res) => {
 
 // Trips new
 router.get('/new', auth.requireLogin, (req, res, next) => {
-  res.render('trips/new');
+  User.findById(req.params.userId, function(err, trip) {
+    if(err) { console.error(err);}
+
+    res.render('trips/new');
+  });
 });
 
 // Trips show
@@ -39,6 +45,7 @@ router.get('/:id', auth.requireLogin, (req, res, next) => {
 // Trips create
 router.post('/', auth.requireLogin, (req, res) => {
   let trip = new Trip(req.body);
+  trip.users.push(req.session.userId);
 
   trip.save((err, trip) => {
     if (err) { console.error(err); }

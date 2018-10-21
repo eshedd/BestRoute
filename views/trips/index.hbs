@@ -1,9 +1,17 @@
-<h1>My Trips</h1>
-
 <div>
-  {{#each trips as |trip|}}
-    <a href="/trips/{{trip.id}}">{{trip.title}}</p>
-  {{/each}}
+  <h1>My Trips</h1>
+  <div class="trips">
+    {{#each trips as |trip|}}
+      <div class="card" on click = "">
+        <div class="card-body">
+            <a href="/trips/{{trip.id}}">{{trip.title}}</a>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+  <br></br>
+  <a href = "/trips/new"><button class="btn btn-primary add">New Trip</button></a>
 </div>
 
 <a href = "/trips/new"><button class="btn btn-primary">New Trip</button></a>

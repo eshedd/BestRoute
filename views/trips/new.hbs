@@ -1,15 +1,49 @@
+<body onload="checkCookie()">
 <div>
-  <form action="/trips" method="post">
+  <form action= "/trips/{{trip.id}}" method="post">
     <legend>New Trip</legend>
-
-    <div>
-      <p>Add a title and then press enter!</p>
-      <input type="text" name="title" id="trip-title" placeholder="Title" autocomplete="off" required>
-    </div>
-
-    <div>
-      <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-      <input type="submit" style="display: none"></input>
-    </div>
+      <input class="input-txt" type="text" name="title" id="trip-title" placeholder="Title" autocomplete="off" required>
+      <br></br>
+      <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+    <a href="/trips"><button class="btn btn-primary back-btn">Back</button>
 </div>
+
+</body>
+
+<script>
+  function setCookie(cname,cvalue,exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays*24*60*60*1000));
+      var expires = "expires=" + d.toGMTString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+
+  function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for(var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+          }
+      }
+      return "";
+  }
+
+  function checkCookie() {
+      var trip=getCookie("mainTrip");
+      if (trip != "") {
+
+      } else {
+         trip = ;
+         if (trip != "/trips/{{trip.id}}" && trip != null) {
+             setCookie("mainTrip", user, 30);
+         }
+      }
+  }
+</script>

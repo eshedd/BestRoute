@@ -2,9 +2,9 @@
   <h2>{{trip.title}}</h2>
 </div>
 
-<div>
+<div class="participants">
   {{#each participants as |participant|}}
-    <div class="card"  on click = "">
+    <div class="card" on click = "">
       <!-- <form method="POST" action="/trips/{{trip._id}}/?_method=DELETE">
         <button type="submit" id="delete-task">X</button>
       </form> -->
@@ -13,13 +13,12 @@
           <h3 class = "participant-namee">{{participant.name}}</h3>
           <p class = "participant-phone">{{participant.phone}}</p>
           <p class = "participant-address">{{participant.address}}</p>
+
+          <a href="/trips/{{trip._id}}/participants/{{participant._id}}/edit"><button class="btn btn-primary">Edit</button></a>
         </div>
       </div>
     </div>
   {{/each}}
-
-  <a href="/trips/{{trip._id}}/participants/new"><button class="btn btn-primary">+</button></a>
-
 </div>
 
 
@@ -54,3 +53,5 @@ map.on('load', function() {
 });
 
 </script>
+<a href="/trips/{{trip._id}}/participants/new"><button class="btn btn-primary add">Add Participant</button></a>
+<a href="/trips"><button class="btn btn-primary back-btn">Back</button>
