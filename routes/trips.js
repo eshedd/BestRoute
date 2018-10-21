@@ -1,6 +1,8 @@
 const express = require('express');
 const auth = require('./helpers/auth');
 const Trip = require('../models/trip');
+const Participant = require('../models/participant');
+const participants = require('./participants');
 
 const router = express.Router();
 
@@ -25,7 +27,11 @@ router.get('/:id', auth.requireLogin, (req, res, next) => {
   Trip.findById(req.params.id, function(err, trip) {
     if(err) { console.error(err) };
 
-    res.render('trips/show', { trip: trip });
+     Participant.find({ trip: trip }, function(err, participants) {
+          if(err) { console.error(err) };
+
+    res.render('trips/show', { trip, participants: participants });
+    });
   });
 });
 
@@ -33,10 +39,12 @@ router.get('/:id', auth.requireLogin, (req, res, next) => {
 router.post('/', auth.requireLogin, (req, res) => {
   let trip = new Trip(req.body);
 
-  trip.save((err, folder) => {
+  trip.save((err, trip) => {
     if (err) { console.error(err); }
-    return res.redirect('/trips');
+    return res.redirect(`/trips/${trip._id}`);
   });
 });
+
+router.use('/:tripId/participants', participants);
 
 module.exports = router;
