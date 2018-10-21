@@ -24,18 +24,10 @@
     </div>
 </form>
 <script>
-    document.querySelector('.group input').addEventListener('blur', (e) => {
+    document.getElementById("user-username").addEventListener('blur', (e) => {
         e.target.value ? e.target.classList.add("has-value") : e.target.classList.remove("has-value");
     });
-    window.onload = () => {
-        var inputs = document.querySelector('.group input');
-        for(let input of inputs) {
-            console.log(input);
-            input.value ? input.classList.add("has-value") : input.classList.remove("has-value");
-            if(input.value)
-                console.log('has-value')
-            else 
-                console.log('not')
-        } 
-    }
+    document.getElementById("user-password").addEventListener('blur', (e) => {
+        e.target.value ? e.target.classList.add("has-value") : e.target.classList.remove("has-value");
+    });
 </script>
