@@ -48,5 +48,9 @@ input {
 }
 
 #center div {
-  padding-top: 5px;
+  padding-top: 10px;
+}
+
+#center .center2 {
+  padding-top: 40px;
 }
