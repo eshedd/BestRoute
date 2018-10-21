@@ -23,3 +23,8 @@
         </div>
     </div>
 </form>
+<script>
+    document.querySelector('.group input').addEventListener('blur', (e) => {
+        e.target.value ? e.target.classList.add("has-value") : e.target.classList.remove("has-value");
+    });
+</script>

@@ -1,7 +1,8 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #eee;  /* #FFF7D7; */
+  background-color: #eee;
+  /* #FFF7D7; */
 }
 
 a {
@@ -9,11 +10,12 @@ a {
 }
 
 .pagetop {
-  display:flex;
+  display: flex;
   justify-content: space-between;
 }
 
 /* Navbar */
+
 .navbar {
   display: flex;
   flex-direction: row;
@@ -41,8 +43,10 @@ a {
 
 .group {
   position: relative;
-  margin: 1rem 1rem;
+  margin: 2rem;
 }
+
+.group .control-label:before,
 .group .control-label {
   position: absolute;
   top: 0.25rem;
@@ -54,12 +58,14 @@ a {
   font-weight: normal;
   -webkit-transition: all 0.28s ease;
   transition: all 0.28s ease;
+  left: 0;
 }
+
 .group input {
-  height: 1.9rem; 
+  height: 1rem;
   display: block;
   background: none;
-  padding: 0.125rem 0.125rem 0.0625rem;
+  padding: 0.125rem 0.125rem 0.3rem;
   font-size: 1rem;
   border-width: 0;
   border-color: transparent;
@@ -70,29 +76,34 @@ a {
   transition: all 0.28s ease;
   box-shadow: none;
 }
+
 .group input:focus,
 .group input:valid,
 .group input.has-value {
   color: #333;
 }
-.group input:focus ~ .control-label,
-.group input:valid ~ .control-label,
-.group input.has-value ~ .control-label {
+
+.group input:focus~.control-label,
+.group input.has-value~.control-label {
   font-size: 0.8rem;
   color: gray;
   top: -1rem;
   left: 0;
 }
+
 .group input:focus {
   outline: none;
 }
-.group input:focus ~ .control-label {
+
+.group input:focus~.control-label {
   color: #337ab7;
 }
-.group input:focus ~ .bar::before {
+
+.group input:focus~.bar::before {
   width: 100%;
   left: 0;
 }
+
 .group .control-label {
   position: absolute;
   top: 0.25rem;
@@ -105,11 +116,13 @@ a {
   -webkit-transition: all 0.28s ease;
   transition: all 0.28s ease;
 }
+
 .group .bar {
   position: relative;
   border-bottom: 0.0625rem solid #999;
   display: block;
 }
+
 .group .bar::before {
   content: '';
   height: 0.125rem;
@@ -122,6 +135,7 @@ a {
   transition: left 0.28s ease, width 0.28s ease;
   z-index: 2;
 }
+
 #center {
   padding-top: 150px;
 }
