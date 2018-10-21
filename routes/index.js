@@ -32,7 +32,7 @@ router.post('/login', (req, res, next) => {
       req.session.userId = user._id;
       req.session.username = user.username;
 
-      return res.redirect('/') ;
+      return res.redirect('/trips') ;
     }
   });
 });

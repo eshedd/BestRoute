@@ -189,7 +189,6 @@ li.list-item {
   font-size: 20px;
   display: flex;
   flex-direction: column;
-  font-weight: bold;
 }
 
 li.item1, li.item3 {
