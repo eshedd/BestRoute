@@ -3,6 +3,7 @@ const auth = require('./helpers/auth');
 const Trip = require('../models/trip');
 const Participant = require('../models/participant');
 const participants = require('./participants');
+const maps = require('../maps/maps.js');
 
 const router = express.Router();
 
@@ -30,7 +31,7 @@ router.get('/:id', auth.requireLogin, (req, res, next) => {
      Participant.find({ trip: trip }, function(err, participants) {
           if(err) { console.error(err) };
 
-    res.render('trips/show', { trip, participants: participants });
+    res.render('trips/show', { trip, participants: participants, maps: maps, testGeometry: maps.getGeometry(maps.geocodes(['1 parklane dr orinda', 'palo alto', 'miramonte high school', 'oakland', 'piedmont', 'berkeley']))});
     });
   });
 });

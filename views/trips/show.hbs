@@ -25,3 +25,32 @@
 
 <br></br>
 <a href="/trips"><button class="btn btn-primary">Back</button>
+
+<div id='map'></div>
+<div id='geometry' style="display: none">{{ testGeometry }}</div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoicGF0cmlja3dhbmczIiwiYSI6ImNqbmlvcm8xazBxdmczd3F0cDN5b2kwdmYifQ.ZF0Rx4e6JnVcfAJt2no9cw';
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/streets-v10',
+  center: [-84.5125, 39.1015],
+  zoom: 12
+});
+map.on('load', function() {
+  map.addLayer({
+    id: 'route',
+    type: 'line',
+    source: {
+      type: 'geojson',
+      data: {
+        type: 'Feature',
+        geometry: document.getElementById('geometry').innerHTML
+      }
+    },
+    paint: {
+      'line-width': 2
+    }
+  });
+});
+
+</script>

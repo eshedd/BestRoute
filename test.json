@@ -1,0 +1,48 @@
+{
+  code: 'Ok',
+  waypoints: [{
+      name: 'Park Lane Drive',
+      location: [Object],
+      waypoint_index: 0,
+      trips_index: 0
+    },
+    {
+      name: 'Urban Lane',
+      location: [Object],
+      waypoint_index: 3,
+      trips_index: 0
+    },
+    {
+      name: '',
+      location: [Object],
+      waypoint_index: 1,
+      trips_index: 0
+    },
+    {
+      name: '14th Street',
+      location: [Object],
+      waypoint_index: 4,
+      trips_index: 0
+    },
+    {
+      name: 'Iler Street',
+      location: [Object],
+      waypoint_index: 2,
+      trips_index: 0
+    },
+    {
+      name: 'Martin Luther King Junior Way',
+      location: [Object],
+      waypoint_index: 5,
+      trips_index: 0
+    }
+  ],
+  trips: [{
+    geometry: 'kkdfFlhrhV`rEs|AngZstj@utFsjeAdbo@iecAp~hDihtBzisG_kyGgtI}}gB|pl@oigBpkz@knhJ{e_@gtlHrx`@k|_@gtAger@}_}A}ki@btIyg_Bo~^qpzBrnVc}fHv`y@ojmFeuyBi|{GrihB_iwGwuVyj|Djr`@_}bI{v~@e`{JhuF{_|Puwz@sjxEdf^y}|HwyU{jmKbsRcisAwlZqu{BhfqA}bdHpk`Auna@qkMwdrDyl}@gy_F|~eDehnGtzYs|lCnq_CuptF_kn@wleM}t\\esLs{xC_h}Jri~Bf|nHvh{@vjjAngj@r~uMyp_ChqtF{zYt|lCy~eDjinGxl}@`z_FldMvbrDyc`Anla@miqAt_dHvnZri|BgsRz~rAdzUhfmK_f^r_}Hbwz@voxEytFn}{P`w~@v{zJor`@x_cIduV~k|DmihBpfwGrtyBz{{Gsby@prmFinVtufHr`_@ttzBmtIhd_Bf`}Adqi@psAr~q@ky`@v_`@nf_@rqlH_kz@nmhJ__~@xlwDeqo@|s`@yyAx`uAymxGvm`GroItrqB_edAdm|@_nO`fx@avV_tWo_n@rwl@{}KfH{VkcU',
+    legs: [Object],
+    weight_name: 'routability',
+    weight: 298791.9,
+    duration: 296471.30000000005,
+    distance: 8445679.4
+  }]
+}
