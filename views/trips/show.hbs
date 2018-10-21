@@ -41,6 +41,7 @@ var map = new mapboxgl.Map({
   center: [-84.5125, 39.1015],
   zoom: 12
 });
+console.log(JSON.parse(document.getElementById('geometry').innerHTML));
 map.on('load', function() {
   map.addLayer({
     id: 'route',
