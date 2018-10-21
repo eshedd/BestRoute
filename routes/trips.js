@@ -22,7 +22,11 @@ router.get('/new', auth.requireLogin, (req, res, next) => {
 
 // Trips show
 router.get('/:id', auth.requireLogin, (req, res, next) => {
-  // TODO
+  Trip.findById(req.params.id, function(err, trip) {
+    if(err) { console.error(err) };
+
+    res.render('trips/show', { trip: trip });
+  });
 });
 
 // Trips create
