@@ -3,7 +3,25 @@
 </div>
 
 <div>
-  Coming soon!
+  {{#each participants as |participant|}}
+    <div class="card"  on click = "">
+      <!-- <form method="POST" action="/trips/{{trip._id}}/?_method=DELETE">
+        <button type="submit" id="delete-task">X</button>
+      </form> -->
+      <div class="card-body">
+        <div class="task-div">
+          <h3 class = "participant-namee">{{participant.name}}</h3>
+          <p class = "participant-phone">{{participant.phone}}</p>
+          <p class = "participant-address">{{participant.address}}</p>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+
+  <a href="/trips/{{trip._id}}/participants/new"><button class="btn btn-primary">+</button></a>
+
 </div>
+
+
 <br></br>
 <a href="/trips"><button class="btn btn-primary">Back</button>

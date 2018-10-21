@@ -3,16 +3,19 @@
     <form action="/users" method="post">
       <legend>New User</legend>
 
-      <div>
-        <input type="text" name="username" id="user-username" placeholder="Username" autocomplete="off" required>
+      <div class="group">
+        <input type="text" name="username" id="user-username" autocomplete="off" required>
+        <label for="input" class="control-label">Username</label><i class="bar"></i>
       </div>
 
-      <div>
-        <input type="password" name="password" id="user-password" placeholder="Password" autocomplete="off" required>
+      <div class="group">
+        <input type="password" name="password" id="user-password" autocomplete="off" required>
+        <label for="input" class="control-label">Password</label><i class="bar"></i>
       </div>
 
-      <div>
-        <input class="form" type="password" required id="confirm_password" placeholder="Confirm Password" autocomplete="off" required>
+      <div class="group">
+        <input class="form" type="password" required id="confirm_password" autocomplete="off" required>
+        <label for="input" class="control-label">Confirm Password</label><i class="bar"></i>
       </div>
 
       <script>
@@ -22,12 +25,22 @@
         function validatePassword() {
           if (password.value != confirm_password.value) {
             confirm_password.setCustomValidity("Passwords Don't Match");
-          } else {
+          }
+          else {
             confirm_password.setCustomValidity('');
           }
         }
         password.onchange = validatePassword;
         confirm_password.onkeyup = validatePassword;
+        document.getElementById("user-username").addEventListener('blur', (e) => {
+          e.target.value ? e.target.classList.add("has-value") : e.target.classList.remove("has-value");
+        });
+        document.getElementById("user-password").addEventListener('blur', (e) => {
+          e.target.value ? e.target.classList.add("has-value") : e.target.classList.remove("has-value");
+        });
+        document.getElementById("confirm_password").addEventListener('blur', (e) => {
+          e.target.value ? e.target.classList.add("has-value") : e.target.classList.remove("has-value");
+        });
       </script>
 
       <div class="center2">
