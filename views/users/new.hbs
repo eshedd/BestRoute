@@ -1,20 +1,44 @@
-<div>
-  <form action="/users" method="post">
-    <legend>New User</legend>
+<div id="center" class="d-flex justify-content-center">
+  <div class="text-center">
+    <form action="/users" method="post">
+      <legend>New User</legend>
 
-    <div>
-      <label>Username</label>
-      <input type="text" name="username" id="user-username" placeholder="Username">
-    </div>
+      <div>
+        <input type="text" name="username" id="user-username" placeholder="Username" autocomplete="off" required>
+      </div>
 
-    <div>
-      <label for="user-password">Password</label>
-      <input type="password" name="password" id="user-password" placeholder="Password">
-    </div>
+      <div>
+        <input type="password" name="password" id="user-password" placeholder="Password" autocomplete="off" required>
+      </div>
 
-    <div>
-      <button type="submit">Submit</button>
-    </div>
-    
-  </form>
+      <div>
+        <input class="form" type="password" required id="confirm_password" placeholder="Confirm Password" autocomplete="off" required>
+      </div>
+
+      <script>
+        var password = document.getElementById("user-password");
+        var confirm_password = document.getElementById("confirm_password");
+
+        function validatePassword() {
+          if (password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("Passwords Don't Match");
+          } else {
+            confirm_password.setCustomValidity('');
+          }
+        }
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+      </script>
+
+      <div class="center2">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+      <div>
+        <p>Have an account?
+          <a href="/login" style="font-weight: bold">Log In</a>
+        </p>
+      </div>
+
+    </form>
+  </div>
 </div>

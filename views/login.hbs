@@ -1,17 +1,25 @@
 <form action="/login" method="post">
-  <legend>Log in</legend>
+    <div id="center" class="d-flex justify-content-center">
+        <div class="text-center">
+            <legend>Log in</legend>
 
-  <div>
-    <label for="user-username">Username</label>
-    <input type="text" name="username" id="user-username" placeholder="username">
-  </div>
+            <div>
+                <input type="text" name="username" id="user-username" placeholder="username">
+            </div>
 
-  <div>
-    <label for="user-password">Password</label>
-    <input type="password" name="password" id="user-password" placeholder="password">
-  </div>
+            <div>
+                <input type="password" name="password" id="user-password" placeholder="password">
+            </div>
 
-  <div>
-    <button type="submit">Submit</button>
-  </div>
+            <div class = "center2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <div>
+                    <p>Don't have an account?
+                        <a href="/users/new" style="font-weight: bold">Sign Up</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </form>

@@ -7,7 +7,7 @@ const User = require('../models/user');
 router.use( function(req, res, next) {
   res.locals.title = "Carpool Buddy";
   res.locals.currentUserId = req.session.userId;
-
+  res.locals.username = req.session.username;
   next();
 });
 
