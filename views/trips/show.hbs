@@ -25,21 +25,22 @@
 <div id='map' style="z-index: 999; height: 20rem; width: 25rem"></div>
 <br></br>
 <a href="/trips"><button class="btn btn-primary">Back</button>
-
+<div id="geometry" style="display: none">{{ testGeometry }}</div>
 
 <a href="/trips/{{trip._id}}/participants/new"><button class="btn btn-primary add">Add Participant</button></a>
 <a href="/trips"><button class="btn btn-primary back-btn">Back</button>
 
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
+
 <script>
 
 mapboxgl.accessToken = 'pk.eyJ1IjoicGF0cmlja3dhbmczIiwiYSI6ImNqbmlvcm8xazBxdmczd3F0cDN5b2kwdmYifQ.ZF0Rx4e6JnVcfAJt2no9cw';
 var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/streets-v10',
-  center: [-84.5125, 39.1015],
-  zoom: 12
+  center: [-122.1745, 37.6415],
+  zoom: 8.3
 });
 map.on('load', function() {
   map.addLayer({
@@ -49,7 +50,7 @@ map.on('load', function() {
       type: 'geojson',
       data: {
         type: 'Feature',
-        geometry: {{ maps.getGeometry(['1 parklane dr orinda', 'palo alto', 'miramonte high school', 'oakland', 'piedmont', 'berkeley']) }}
+        geometry: JSON.parse(document.getElementById('geometry').innerHTML)
       }
     },
     paint: {
