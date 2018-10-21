@@ -1,5 +1,5 @@
 {
-  "name": "bestRoute",
+  "name": "BestRoute",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -17,9 +17,7 @@
     "mongodb": "^3.1.8",
     "mongoose": "^5.3.4",
     "morgan": "~1.9.0",
-    "nodemon": "^1.18.4"
-  },
-  "engines": {
-    "node": "8.11.3"
-  },
+    "nodemon": "^1.18.4",
+    "typer-js": "^5.0.0"
+  }
 }
