@@ -2,9 +2,9 @@
   <h2>{{trip.title}}</h2>
 </div>
 
-<div>
+<div class="participants">
   {{#each participants as |participant|}}
-    <div class="card"  on click = "">
+    <div class="card" on click = "">
       <!-- <form method="POST" action="/trips/{{trip._id}}/?_method=DELETE">
         <button type="submit" id="delete-task">X</button>
       </form> -->
@@ -13,15 +13,78 @@
           <h3 class = "participant-namee">{{participant.name}}</h3>
           <p class = "participant-phone">{{participant.phone}}</p>
           <p class = "participant-address">{{participant.address}}</p>
+
+          <a href="/trips/{{trip._id}}/participants/{{participant._id}}/edit"><button class="btn btn-primary">Edit</button></a>
         </div>
       </div>
     </div>
   {{/each}}
-
-  <a href="/trips/{{trip._id}}/participants/new"><button class="btn btn-primary">+</button></a>
-
 </div>
 
 
 <br></br>
 <a href="/trips"><button class="btn btn-primary">Back</button>
+
+
+<a href="/trips/{{trip._id}}/participants/new"><button class="btn btn-primary add">Add Participant</button></a>
+<a href="/trips"><button class="btn btn-primary back-btn">Back</button>
+<div id='map'></div>
+<div id='geometry' style="display: none">{{ testGeometry }}</div>
+
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
+<script>
+
+mapboxgl.accessToken = 'pk.eyJ1IjoicGF0cmlja3dhbmczIiwiYSI6ImNqbmlvcm8xazBxdmczd3F0cDN5b2kwdmYifQ.ZF0Rx4e6JnVcfAJt2no9cw';
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/streets-v10',
+  center: [-84.5125, 39.1015],
+  zoom: 12
+});
+map.on('load', function() {
+  map.addLayer({
+    id: 'route',
+    type: 'line',
+    source: {
+      type: 'geojson',
+      data: {
+        type: 'Feature',
+        geometry: document.getElementById('geometry').innerHTML
+      }
+    },
+    paint: {
+      'line-width': 2
+    }
+  });
+  // map.addLayer({
+  //   id: 'start',
+  //   type: 'circle',
+  //   source: {
+  //     type: 'geojson',
+  //     data: {
+  //       type: 'Feature',
+  //       geometry: {
+  //         type: 'Point',
+  //         coordinates: start
+  //       }
+  //     }
+  //   }
+  // });
+  // map.addLayer({
+  //   id: 'end',
+  //   type: 'circle',
+  //   source: {
+  //     type: 'geojson',
+  //     data: {
+  //       type: 'Feature',
+  //       geometry: {
+  //         type: 'Point',
+  //         coordinates: end
+  //       }
+  //     }
+  //   }
+  // });
+});
+
+</script>

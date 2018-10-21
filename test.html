@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id='map'></div>
+    <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoicGF0cmlja3dhbmczIiwiYSI6ImNqbmlvcm8xazBxdmczd3F0cDN5b2kwdmYifQ.ZF0Rx4e6JnVcfAJt2no9cw';
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v10',
+      center: [-84.5125, 39.1015],
+      zoom: 12
+    });
+    map.on('load', function() {
+      var route = data.routes[0].geometry;
+        map.addLayer({
+          id: 'route',
+          type: 'line',
+          source: {
+            type: 'geojson',
+            data: {
+              type: 'Feature',
+              geometry: route
+            }
+          },
+          paint: {
+            'line-width': 2
+          }
+        });
+    });
+    
+    </script>
+  </body>
+</html>
