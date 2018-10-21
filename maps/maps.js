@@ -1,5 +1,6 @@
 var maps = module.exports = {};
-var http = require('http');
+var https = require('https');
+var request = require('request');
 var key = process.env.GCP_API_Key;
 const gMaps = require('@google/maps').createClient({
     key: key
@@ -42,21 +43,23 @@ maps.getBestRoute = (from, mids, to) => {
 }
 
 function routeDuration(start, end) {
-    return getJSON(`https://maps.googleapis.com/maps/api/directions/json?origin=${start}&destination=${start}&key=${key}`);
+    gMaps.distanceMatrix({
+        
+    });
+    return getJSON(`http://maps.googleapis.com/maps/api/directions/json?origin=${start}&destination=${start}&key=${key}`);
 }
 
 function getJSON(url) {
-    http.get(url, (res) => {
-        let body = '';
-
-        res.on('data', (chunk) => {
-            body += chunk;
+    var data;
+    https.get(url, function(res){
+        res.on('data', function(chunk){
+            data += chunk;
         });
-
-        res.on('end', () => {
-            return JSON.parse(body);
+        res.on('end', function(){
+            var data = JSON.parse(data);
         });
-    }).on('error', function(e) {
-        console.log("Got an error: ", e);
-    });
+    }).on('error', function(e){
+    }).end();
+    return data;
 }
+console.log(getJSON('https://maps.googleapis.com/maps/api/distancematrix/json?origins=Washington,DC&destinations=New+York+City,NY%20Disneyland&key=AIzaSyCZMNFyJg6qmMh6MVw-ez_5BNBGVv9fwk8'));
