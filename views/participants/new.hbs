@@ -1,10 +1,10 @@
 <div>
   <legend>New Participant</legend>
-  
+
   <form action="/trips/{{trip.id}}/participants" method="post">
-    <input type="text" name="name" id="participant-name" placeholder="Name" autocomplete="off" required>
-    <input type="text" name="phone" id="participant-phone" placeholder="Phone" autocomplete="off" required>
-    <input type="text" name="address" id="participant-address" placeholder="Address" autocomplete="off" required>
+    <input class="input-txt" type="text" name="name" id="participant-name" placeholder="Name" autocomplete="off" required>
+    <input class="input-txt" type="text" name="phone" id="participant-phone" placeholder="Phone" autocomplete="off" required>
+    <input class="input-txt" type="text" name="address" id="participant-address" placeholder="Address" autocomplete="off" required>
 
     <div>
       <button type="submit" class="btn btn-primary">Submit</button>

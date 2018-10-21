@@ -2,17 +2,12 @@
   <div>
   <form action= "/trips/{{trip.id}}" method="post">
     <legend>New Trip</legend>
-
-    <div>
-      <input type="text" name="title" id="trip-title" placeholder="Title" autocomplete="off" required>
-    </div>
-
-    <div>
+      <input class="input-txt" type="text" name="title" id="trip-title" placeholder="Title" autocomplete="off" required>
       <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
   </form>
+  <br></br>
+  <a href="/trips"><button class="btn btn-primary back-btn">Back</button>
 </div>
-<a href="/trips"><button class="btn btn-primary back-btn">Back</button>
 
 </body>
 
