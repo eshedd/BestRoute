@@ -20,7 +20,7 @@ a {
   display: flex;
   flex-direction: row;
   background-color: #fff;
-  height: 50px;
+  height: 60px;
   align-items: center;
   padding: 2.5px 10px 2.5px 10px;
   position: fixed;

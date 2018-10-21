@@ -30,7 +30,7 @@ router.get('/:id', auth.requireLogin, (req, res, next) => {
      Participant.find({ trip: trip }, function(err, participants) {
           if(err) { console.error(err) };
 
-    res.render('trips/show', { trip, participants: participants });
+    res.render('trips/show', { trip, participants });
     });
   });
 });
