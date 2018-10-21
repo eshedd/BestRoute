@@ -1,22 +1,55 @@
+# Best Route
+BestRoute is a website that tells users to when to leave at an optimal time in order to avoid traffic and other commuting complications.
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+## Audience
+BestRoute is for any commuters - students and adults.
+
+## Experience
+A user goes onto the website and inputs where they are going and what time they have to be there. BestRoute then sends them a message/push notification for when they should leave.
+extra:
+shows BEST ROUTE
+
+# Technical
+## Models
+- User
+  - name
+  - phone number
+  - destination (address)
+- Trip
+  - time
+  - final/end destination
 
 
-Welcome to your Node.js project on Cloud9 IDE!
+#### Extra
 
-This chat example showcases how to use `socket.io` with a static `express` server.
+## Views
+- login/sign up
+- home page
+  - new button
+- New
+  - has map view
+- Trip
+  - see old trip
 
-## Running the server
 
-1) Open `server.js` and start the app by clicking on the "Run" button in the top menu.
+## Routes
+- home
+  - GET `/`
+- Login
+  - POST `../login`
+- Sign Up
+  - POST `../users/new`
+- New Trip
+  - GET `../trip/:trip_id`
+  - POST `../trip/new`
 
-2) Alternatively you can launch the app from the Terminal:
+### Extra
+delete feature
 
-    $ node server.js
 
-Once the server is running, open the project in the shape of 'https://projectname-username.c9users.io/'. As you enter your name, watch the Users list (on the left) update. Once you press Enter or Send, the message is shared with all connected clients.
+## Other
+- Google Maps API
+- MongoDB
+- mLab
+- Express
+- Bootstrap?
