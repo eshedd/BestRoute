@@ -2,9 +2,14 @@
   <legend>New Participant</legend>
 
   <form action="/trips/{{trip.id}}/participants" method="post">
-    <input class="input-txt" type="text" name="name" id="participant-name" placeholder="Name" autocomplete="off" required>
-    <input class="input-txt" type="text" name="phone" id="participant-phone" placeholder="Phone" autocomplete="off" required>
-    <input class="input-txt" type="text" name="address" id="participant-address" placeholder="Address" autocomplete="off" required>
+    <label for="name">Name</label>
+    <input class="input-txt" type="text" name="name" id="participant-name" placeholder="Jane Smith" autocomplete="off" required>
+    <br></br>
+    <label for="phone">Phone Number</label>
+    <input class="input-txt" type="text" name="phone" id="participant-phone" placeholder="###-###-####" autocomplete="off" required>
+    <br></br>
+    <label for="address">Address</label>
+    <input class="input-txt" type="text" name="address" id="participant-address" placeholder="100 Hacker Way" autocomplete="off" required>
     <br></br>
     <div>
       <button type="submit" class="btn btn-primary">Submit</button>
