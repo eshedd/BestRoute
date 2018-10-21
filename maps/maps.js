@@ -101,4 +101,4 @@ var geocodes = maps.geocodes = (points) => {
     return res;
 }
 // console.log(maps.getBestRouteBySearch(['1 parklane dr orinda', 'palo alto', 'miramonte high school', 'oakland', 'piedmont', 'berkeley']));
-console.log(maps.getGeometry(geocodes(['1 parklane dr orinda', 'palo alto', 'miramonte high school', 'oakland', 'piedmont', 'berkeley'])));
+// console.log(maps.getGeometry(geocodes(['1 parklane dr orinda', 'palo alto', 'miramonte high school', 'oakland', 'piedmont', 'berkeley'])));
