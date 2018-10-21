@@ -76,7 +76,7 @@ maps.getBestRouteBySearch = (arr) => {
 //     }
 // };
 function bestRouteJSON(str) {
-    return getJSON(`https://api.mapbox.com/optimized-trips/v1/mapbox/driving/${str.slice(0, str.length - 1)}?source=first&destination=last&access_token=${key}`);
+    return getJSON(`https://api.mapbox.com/optimized-trips/v1/mapbox/driving/${str.slice(0, str.length - 1)}?source=first&geometries=geojson&destination=last&access_token=${key}`);
 } 
 function tripDuration(arr) {
     return maps.getBestRoute(arr).trips[0].duration;
@@ -101,4 +101,6 @@ var geocodes = maps.geocodes = (points) => {
     return res;
 }
 // console.log(maps.getBestRouteBySearch(['1 parklane dr orinda', 'palo alto', 'miramonte high school', 'oakland', 'piedmont', 'berkeley']));
-// console.log(maps.getGeometry(geocodes(['1 parklane dr orinda', 'palo alto', 'miramonte high school', 'oakland', 'piedmont', 'berkeley'])));
+console.log(maps.getGeometry(geocodes(['1 parklane dr orinda', 'palo alto', 'miramonte high school', 'oakland', 'piedmont', 'berkeley'])));
+console.log(maps.getBestRoute(geocodes(['1 parklane dr orinda', 'palo alto', 'miramonte high school', 'oakland', 'piedmont', 'berkeley'])).trips[0].legs);
+
