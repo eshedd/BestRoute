@@ -1,0 +1,12 @@
+  <h1>My Trips</h1>
+
+  <div>
+    {{#each trips as |trip|}}
+    <!-- <a href="/trips/{{folder.id}}"> -->
+    <p>{{trip.title}}</p>
+    <!-- </a> -->
+    {{/each}}
+  </div>
+
+  <a href = "/trips/new"><button>New Trip</button></a>
+</div>
