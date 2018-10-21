@@ -26,7 +26,7 @@ maps.getEmbed = (route) => {
 maps.getBestRouteCoords = (arr) => {
     var json = maps.getBestRoute(arr);
     return json.waypoints.map((x) => x.location);
-}; // I win
+}; 
 maps.getBestRouteBySearch = (arr) => {
     var str = "",
         res = [];
