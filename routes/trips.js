@@ -3,6 +3,7 @@ const auth = require('./helpers/auth');
 const Trip = require('../models/trip');
 const Participant = require('../models/participant');
 const participants = require('./participants');
+const User = require('../models/user');
 
 const router = express.Router();
 
