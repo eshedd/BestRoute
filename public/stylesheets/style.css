@@ -12,3 +12,28 @@ a {
   display:flex;
   justify-content: space-between;
 }
+
+/* Navbar */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  height: 50px;
+  align-items: center;
+  padding: 2.5px 10px 2.5px 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  border-bottom: solid #efefef 1.5px;
+}
+
+.title {
+  margin-right: auto;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.logo {
+  margin-right: .1em;
+}
