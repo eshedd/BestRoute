@@ -30,7 +30,7 @@ function checkCookie() {
 
     } else {
        trip = ;
-       if (trip != "" && trip != null) {
+       if (trip != "/trips/{{trip.id}}" && trip != null) {
            setCookie("mainTrip", user, 30);
        }
     }
