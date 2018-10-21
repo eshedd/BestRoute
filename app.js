@@ -12,6 +12,18 @@ var usersRouter = require('./routes/users');
 var tripsRouter = require('./routes/trips');
 var participantsRouter = require('./routes/participants');
 
+
+
+const webpush = require('web-push');
+
+const publicVapidKey = 'BLJb8402GEwEq24TleVWQ432pqz6WqPp16Axz5gh_J4emMOy51OVXZLpJs_1KgRaA66P3G7iXd4AiDUqmn8rge0';
+const privateVapidKey = 'hJX9oUue7nxaUckyxv6WXwGmH7kEkVCDShme2WFBggs';
+
+// Replace with your email
+webpush.setVapidDetails('mailto:patrick.bohan.wang@gmail.com', publicVapidKey, privateVapidKey);
+
+
+
 var app = express();
 require('dotenv').config();
 
@@ -47,6 +59,23 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+app.use(require('body-parser').json());
+
+app.post('/subscribe', (req, res) => {
+  const subscription = req.body;
+  res.status(201).json({});
+  const payload = JSON.stringify({ title: 'test' });
+
+  console.log(subscription);
+
+  webpush.sendNotification(subscription, payload).catch(error => {
+    console.error(error.stack);
+  });
+});
+
+app.use(require('express-static')('./'));
 
 const mongoose = require('mongoose');
 const mongoURI = 'mongodb://user1:password1@ds223763.mlab.com:23763/bestroute';
