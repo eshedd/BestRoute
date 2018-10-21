@@ -1,0 +1,13 @@
+<div>
+  <legend>Edit Participant</legend>
+
+  <form action="/trips/{{trip.id}}/participants/{{participant._id}}/edit" method="post">
+    <input type="text" name="name" id="participant-name" autocomplete="off" value="{{participant.name}}">
+    <input type="text" name="phone" id="participant-phone" autocomplete="off" value="{{participant.phone}}">
+    <input type="text" name="address" id="participant-address" autocomplete="off" value="{{participant.address}}">
+
+    <div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>

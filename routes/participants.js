@@ -30,4 +30,24 @@ router.post('/', auth.requireLogin, (req, res, next) => {
   });
 });
 
+// Participant update
+router.post('/:id/edit', auth.requireLogin, (req, res) => {
+  Participant.findByIdAndUpdate(req.params.id, req.body, function(err, participant) {
+    if(err) { console.error(err) };
+      res.redirect('../../');
+  });
+});
+
+// Participant edit
+router.get('/:id/edit', auth.requireLogin, (req, res, next) => {
+  Trip.findById(req.params.tripId, function(err, trip) {
+    if(err) { console.error(err) };
+      Participant.findById(req.params.id, function(err, participant) {
+        if(err) { console.error(err) };
+
+      res.render('participants/edit', { trip: trip, participant: participant });
+    });
+  });
+});
+
 module.exports = router;
