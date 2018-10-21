@@ -12,6 +12,7 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 require('dotenv').config();
+
 const session = require('express-session');
 app.use(session({ secret: 'secret-unique-code', cookie: { maxAge: 3600000 }, resave: true, saveUninitialized: true }));
 

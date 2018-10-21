@@ -7,7 +7,9 @@ const gMaps = require('@google/maps').createClient({
 
 
 maps.getBestRoute = (from, mids, to) => {
-    var possibilities = [];
+    var perms = permutations(mids);
+    var all = tryall();
+    return [from, ...perms[all.indexOf(Math.min(...all))], to];
     function permutations(inputArr) {
         let result = [];
         function permute(arr, m = []) {
@@ -25,16 +27,22 @@ maps.getBestRoute = (from, mids, to) => {
         permute(inputArr)
         return result;
     }
-
     function tryall() {
-        for (let permutation of permutations(mids)) {
-            possibilities.push();
+        let poss = [];
+        for (let i in permutations(mids)) {
+            poss.push([]);
+            for(let j = 0; j < perms[i].length() - 1; j++) {
+                poss[i].push(routeDuration(perms[i][j], perms[i][j + 1]));
+            }
+            poss[i].reduce((a, b) => a + b, routeDuration(from, poss[i][0]) + routeDuration(poss[i][poss[i].length], to));
         }
+        return poss;
     }
+    
 }
 
 function routeDuration(start, end) {
-    getJSON(`https://maps.googleapis.com/maps/api/directions/json?origin=${start}&destination=${start}&key=${key}`);
+    return getJSON(`https://maps.googleapis.com/maps/api/directions/json?origin=${start}&destination=${start}&key=${key}`);
 }
 
 function getJSON(url) {
