@@ -210,3 +210,27 @@ li.list-item-img {
   flex-direction: column;
   justify-content: center;
 }
+
+/* Participants */
+.card {
+  margin: 1em;
+  border: none;
+}
+
+.trips, .participants {
+  display: flex;
+  justify-content: center;
+}
+
+.add {
+  margin-top: 2em;
+  position: absolute;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+.back-btn {
+  position: fixed;
+  bottom: 2em;
+  left: 2em;
+}

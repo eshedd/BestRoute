@@ -2,9 +2,9 @@
   <h2>{{trip.title}}</h2>
 </div>
 
-<div>
+<div class="participants">
   {{#each participants as |participant|}}
-    <div class="card"  on click = "">
+    <div class="card" on click = "">
       <!-- <form method="POST" action="/trips/{{trip._id}}/?_method=DELETE">
         <button type="submit" id="delete-task">X</button>
       </form> -->
@@ -19,11 +19,7 @@
       </div>
     </div>
   {{/each}}
-
-  <a href="/trips/{{trip._id}}/participants/new"><button class="btn btn-primary">+</button></a>
-
 </div>
 
-
-<br></br>
-<a href="/trips"><button class="btn btn-primary">Back</button>
+<a href="/trips/{{trip._id}}/participants/new"><button class="btn btn-primary add">+</button></a>
+<a href="/trips"><button class="btn btn-primary back-btn">Back</button>
